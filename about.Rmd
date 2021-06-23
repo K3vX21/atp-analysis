@@ -8,3 +8,17 @@ description: |
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+## About Me
+**Kevin Xu** is currently a student that resides in Naperville, Illinois (Class of '22, Naperville North High School).
+
+## About the Project
+This project explores the relationships and trends for ATP Matches, predominately singles matches.
+
+### Goals
+* Explore demographic changes in the game
+* Explore style-of-game shifts in the game
+
+“This is data science"
+~ Preceptor
+
+[Kane’s Free High School Data Science Bootcamp](https://bootcamp.davidkane.info/)
