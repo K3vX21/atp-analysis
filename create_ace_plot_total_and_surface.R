@@ -38,7 +38,7 @@ plot_ace_total_and_surface <- ace_total_and_surface %>%
   geom_line() +
   theme_clean() + 
   scale_color_discrete(name = "Surface",
-                       labels = c("Carpet", "Clay", "Grass","Hard","Combined")) + 
+                       labels = c("Carpet", "Clay", "Grass","Hard","All Surfaces")) + 
   labs(title = "Annual Mean Aces per Game in the ATP Tour",
        x = "Year",
        y = "Mean Aces per Game in Year")
