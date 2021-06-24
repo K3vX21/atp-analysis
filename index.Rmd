@@ -11,7 +11,17 @@ library(tidyverse)
 ```
 # Examining how the game has changed
 ## Aces over the years
-```{r ace-plot, layout = "l-body-outset", echo = FALSE}
+```{r ace-plot, echo = FALSE}
 ace_plot <- read_rds("plot_ace_total_and_surface.rds")
 ace_plot
+```
+## Average Age at the Grand Slams
+```{r age_plot}
+age_plot <- read_rds("plot_avg_age_combined.rds")
+age_plot
+```
+## Average Height at Grand Slams
+```{r height_plot}
+height_plot <- read_rds("plot_avg_ht.rds")
+height_plot
 ```
