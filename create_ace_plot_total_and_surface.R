@@ -36,11 +36,10 @@ plot_ace_total_and_surface <- ace_total_and_surface %>%
   filter(year > 1991 & year < 2020) %>% 
   ggplot(aes(x = year, y = avg_ace_per_game, group = surface, color = surface)) +
   geom_line() +
-  # scale_x_continuous(breaks = c(1991:2019)) +
   theme_clean() + 
-  # theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_color_discrete(name = "Surface",
+                       labels = c("Carpet", "Clay", "Grass","Hard","Combined")) + 
   labs(title = "Annual Mean Aces per Game in the ATP Tour",
        x = "Year",
        y = "Mean Aces per Game in Year")
-
 write_rds(plot_ace_total_and_surface, "plot_ace_total_and_surface.rds")
