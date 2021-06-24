@@ -3,25 +3,57 @@ title: "ATP Analysis"
 description: |
   Welcome to the website. I hope you enjoy it!
 site: distill::distill_website
+editor_options: 
+  chunk_output_type: inline
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 library(tidyverse)
+library(rmarkdown)
+library(gt)
 ```
-# Examining how the game has changed
+# Background
+The [Association of Tennis Professionals](https://www.atptour.com/en/corporate/about) is "the global governing body of men’s professional tennis" and was created in 1972. Using data compiled from [Jeff Sackman's Github Repository](https://github.com/JeffSackmann/tennis_atp), this project looks at some of the trends in the game since its conception.  
+
+# Process & Methodology
+The website was created using the distill R package.
+
+Data wrangling and visualization utilized the tidyverse R package.
+
+Looking at just single's matches, the data needed to be compiled from annual datasets into a single document.
+
+## Aggregated  Raw Data
+```{r table}
+table <- read_rds("aggregate_data.rds") %>% select(-source)
+paged_table(table, options(cols.print = 12))
+```
+
+# Analysis: How the Game Has Changed
 ## Aces over the years
 ```{r ace-plot, echo = FALSE}
 ace_plot <- read_rds("plot_ace_total_and_surface.rds")
 ace_plot
 ```
+### Comments
+Carpet surface matches were officially ended on the ATP Tour in 2009.
+
+The different properties of each type of court surface largely account for the inter-surface difference in ace rates.
+
+As rackets have gotten more powerful, the ace rate has also increased.
+
 ## Average Age at the Grand Slams
 ```{r age_plot}
 age_plot <- read_rds("plot_avg_age_combined.rds")
 age_plot
 ```
+### Comments
+An aging generation is making its way through the Grand Slam series. Looking beyond the Big Three (Roger Federer, Rafael Nadal and Novak Djokovic), a new generation seems to be on its way.
+
 ## Average Height at Grand Slams
 ```{r height_plot}
 height_plot <- read_rds("plot_avg_ht.rds")
 height_plot
 ```
+### Comments
+A height advantage brings a competitive edge of the game, which more taller athletes have been able to take advantage of.
