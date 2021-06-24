@@ -63,5 +63,4 @@ for(file_name in list.files(path = "datasets")){
   all_years <- bind_rows(all_years, raw_file_tagged)
 }
 
-# write_csv(all_years, "aggregate_data.csv")
 write_rds(all_years, "aggregate_data.rds")
